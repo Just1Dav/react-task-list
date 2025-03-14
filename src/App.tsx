@@ -26,12 +26,22 @@ function App() {
     );
   }
 
+  function handleDeleteTask(taskToDelete: ITask) {
+    setTasksList((prevState) =>
+      prevState.filter((task) => {
+        if (task.id !== taskToDelete.id) {
+          return task;
+        }
+      })
+    );
+  }
+
   return (
     <>
       <Header />
       <div className={style.wrapper}>
         <TaskCreator createNewTask={handleCreateNewTask} />
-        <TaskList tasks={tasksList} updateTask={handleUpdateTask} />
+        <TaskList tasks={tasksList} updateTask={handleUpdateTask} deleteTask={handleDeleteTask} />
       </div>
     </>
   );
