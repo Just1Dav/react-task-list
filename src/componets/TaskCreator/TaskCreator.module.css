@@ -1,0 +1,77 @@
+.formWrapper {
+  position: relative;
+}
+
+.newTaskForm {
+  position: absolute;
+  top: -30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0px;
+  gap: 8px;
+}
+
+.newTaskForm input[type="text"] {
+  padding: 16px;
+  gap: 8px;
+
+  max-width: 638px;
+  height: 54px;
+
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+
+  color: var(--gray-100);
+  font-size: 1rem;
+
+  order: 0;
+}
+
+.newTaskForm input[type="text"]::placeholder {
+  color: var(--gray-300);
+  font-size: 1rem;
+}
+
+.newTaskForm input[type="text"]:focus-visible {
+  border: 2px solid var(--purple-dark);
+  outline: none;
+}
+
+.newTaskForm button[type="submit"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+
+  width: 90px;
+  height: 52px;
+  background: var(--blue-dark);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+
+  color: var(--gray-100);
+  font-weight: bold;
+  font-size: 0.875rem;
+
+  border: none;
+
+  order: 1;
+}
+
+.newTaskForm button[type="submit"]:disabled {
+  background: var(--gray-300);
+  cursor: not-allowed;
+}
+
+.newTaskForm button[type="submit"]:not(:disabled):hover {
+  background: var(--blue);
+}
+
+.newTaskForm button[type="submit"] img {
+  height: 16px;
+}

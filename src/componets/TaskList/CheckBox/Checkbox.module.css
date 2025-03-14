@@ -1,0 +1,60 @@
+/* Esconde o checkbox padrão */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Estiliza o label para parecer um checkbox */
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  width: fit-content;
+}
+
+/* Cria a caixa do checkbox */
+.customCheckbox::before {
+  content: "";
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  width: 1.063rem;
+  height: 1rem;
+  background-color: transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid var(--blue);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* Alteração nas cores no hover com checkbox desmarcado */
+input[type="checkbox"]:not(:checked) + .customCheckbox:hover::before {
+  border-color: var(--blue-dark);
+  background-color: var(--opaque-blue-dark);
+}
+
+/* Exibe o "✔" quando estiver marcado */
+input[type="checkbox"]:checked + .customCheckbox::before {
+  content: "✔";
+  border-color: var(--purple-dark);
+  background-color: var(--purple-dark);
+}
+
+/* Alteração nas cores no hover com checkbox marcado */
+input[type="checkbox"]:is(:checked) + .customCheckbox:hover::before {
+  content: "✔";
+  border-color: var(--purple);
+  background-color: var(--purple);
+}
